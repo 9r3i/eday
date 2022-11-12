@@ -1,0 +1,45 @@
+/* other css */
+body{background-color:#7A7A7A;}
+
+a,h1,h2,h3,h4,h5,h6,.cart i.icon-basket
+.agen-harga,.button-widget-link,.beli,.beli:visited{color:#FF7F00;}
+
+.kategori-menu-icon,.sidebar-menu-icon,.vtr-menu-icon,
+.testimoni-slide li,.blog-list li .btn,.sidebar-menu h4,
+.box2,.cart,#search,.box ul li a:hover{background-color:#FF7F00}
+
+.sidebar-menu-icon,.vtr-menu,.box h4{border-bottom-color:#FF7F00;}
+
+.btn,.current,.index-pagenavi a:hover{color:#FFFFFF;background-color:#FF7F00;}
+
+#newsticker>div{background-color:#FF7F00;width:100%;height:24px;overflow:hidden;padding-bottom:5px}
+
+.slider-home-wrapper{
+  display:block;
+  text-align:start;
+  float:none;
+  position:relative;
+  top:auto;right:auto;
+  bottom:auto;left:auto;
+  z-index:auto;
+  width:970px;
+  height:195px;
+  margin:0px;
+  overflow:hidden;
+}
+.slider-home-wrapper ul{
+  text-align:left;
+  float:none;
+  position:absolute;
+  top:0px;right:auto;
+  bottom:auto;left:25px;
+  margin:0px;width:3546px;
+  height:195px;z-index:auto;
+}
+img.lazy{max-width:149px;max-height:149px;}
+
+.tagcloud{text-align:center;}
+
+@media screen and (min-width: 768px){
+  .cart{background-color:transparent;}
+}
