@@ -18,6 +18,6 @@ you might wanna use the stable one in
 # requirements
 this version has been using namespace \eday, so it's very different from the old one
 
-this version also requires another library, but fortunately, I put everithing on it.
+this version also requires another library, but fortunately, I put everything on it.
 
-still, i suggest use thr old one because that version is stable.
+still, i suggest use the old one because that version is stable.
