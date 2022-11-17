@@ -1,0 +1,134 @@
+<div class="new-post-grid">
+<div class="title">{{data.title}}</div>
+
+<table class="new-post-table"><tbody>
+  
+<tr><td colspan="2"><div class="slider"></div></td></tr>
+<tr><td colspan="2">
+  <div class="input-mask">Click or tap here to add pictures</div>
+  <input type="file" name="picture" accept="image/*" multiple="true" class="input-mask-real" />
+</td></tr>
+
+<tr><td colspan="2"><input type="text" name="title" placeholder="Product Name" value="{{data.title}}" /></td></tr>
+<tr><td colspan="2"><textarea name="content" placeholder="Description" data-value="{{data.content}}">{{data.contentReal}}</textarea></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+
+<div class="new-post-grid">
+<table class="new-post-table"><tbody>
+<tr><td colspan="2">
+  <button class="button button-blue" name="submit"><i class="fa fa-save"></i> Save</button>
+  <button class="button button-soft-green" onclick="window.location.assign('#products')"><i class="fa fa-step-backward"></i> Back</button>
+  </td></tr>
+
+
+<tr data-event="true">
+  <td>Currency</td>
+  <td><input type="text" name="host" value="{{data.host}}" placeholder="Currency" /></td>
+  </tr>
+<tr data-training="true" data-event="true" data-product="true">
+  <td>Price</td>
+  <td><input type="number" name="price" value="{{data.price}}" placeholder="Price" /></td>
+  </tr>
+<tr data-training="true" data-event="true">
+  <td>B-Price</td>
+  <td><input type="number" name="place" value="{{data.place}}" placeholder="Price Before Discount" /></td>
+  </tr>
+<tr data-product="true">
+  <td>Stock</td>
+  <td><input type="number" name="stock" value="{{data.stock}}" placeholder="Stock" min="0" max="99" /></td>
+  </tr>
+  
+<tr data-post="true" data-article="true">
+  <td>Categories</td>
+  <td><input type="text" name="keywords" placeholder="Insert Category, then Enter or Go" /></td>
+  </tr>
+
+<tr data-post="true" data-article="true">
+  <td colspan="2">
+    <div class="spec-title">Specification</div>
+    <div class="spec-variables"></div>
+    </td>
+  </tr>
+<tr data-post="true" data-article="true">
+  <td><input type="text" name="spec-key" placeholder="Spec Key" /></td>
+  <td><input type="text" name="spec-value" placeholder="Spec Value, then Enter or Go" /></td>
+  </tr>
+
+
+  
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+
+<div class="padding-down"></div>
+
+<style type="text/css" media="print,screen">
+.new-post-grid{
+  display:inline-block;
+  vertical-align:top;
+  width:calc(50% - 3px);
+}
+.new-post-table{
+  display:block;
+  width:100%;
+}
+.new-post-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.new-post-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.new-post-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.new-post-table tr[data-post="false"],
+.new-post-table tr[data-article="false"],
+.new-post-table tr[data-training="false"],
+.new-post-table tr[data-product="false"],
+.new-post-table tr[data-event="false"],
+.new-post-table tr[data-other="false"]{
+  display:none;
+}
+.new-post-table tr[data-post="true"],
+.new-post-table tr[data-article="true"],
+.new-post-table tr[data-training="true"],
+.new-post-table tr[data-product="true"],
+.new-post-table tr[data-event="true"],
+.new-post-table tr[data-other="true"]{
+  display:table-row;
+}
+.new-post-table td input[type="submit"]{
+  margin-right:3px;
+  font-weight:bold;
+}
+.new-post-table td.new-post-sel select{
+  margin:0px 1px 5px 0px;
+}
+textarea[name="content"]{
+  height:150px;
+}
+.mce-menubar{
+  display:none;
+}
+
+@media screen and (max-width:1050px){
+  .new-post-grid{
+    display:block;
+    width:100%;
+  }
+}
+@media screen and (max-width:620px){
+  textarea[name="content"]{
+    height:300px;
+  }
+}
+</style>
+
+

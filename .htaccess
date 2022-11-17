@@ -1,3 +1,17 @@
+# M-Server
+# authored by 9r3i ~ https://github.com/9r3i
+
+# turn rewrite-engine on
+RewriteEngine On
+RewriteBase /
+# ----- luthfie.com only -----
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.*)$
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+# ----- ---------------- -----
+RewriteRule . index.php [QSA,NC,L]
+
 # options - no indexes and symlinks
 Options -Indexes
 Options +SymlinksIfOwnerMatch

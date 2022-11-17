@@ -1,0 +1,91 @@
+<div class="title">My Products ({{length}})</div>
+<div class="products-option">
+<select name="status">
+  <option value="publish">Publish</option>
+  <option value="draft">Draft</option>
+  <option value="trash">Trash</option>
+</select>
+<select name="access">
+  <option value="public">Public</option>
+  <option value="private">Private</option>
+</select>
+<select name="type">
+  <option value="product">Product</option>
+  <option value="page">Page</option>
+  <option value="post">Post</option>
+  <option value="training">Training</option>
+  <option value="article">Article</option>
+  <option value="event">Event</option>
+</select>
+<button class="button button-soft-green" onclick="products.newProduct();"><i class="fa fa-plus"></i><span>New Post</span></button>
+<div class="products-option-detail" id="products-option-detail">
+</div>
+</div>
+<div class="products-list" id="products-list">
+</div>
+<style type="text/css">
+.prodoption{
+  padding:0px;
+  margin:0px 0px 20px;
+}
+.products-option select{
+  margin:0px 5px 5px 0px;
+  padding:7px 11px;
+}
+.products-option button{
+  vertical-align:top;
+  margin:0px 5px 5px 0px;
+}
+.products-option-detail{
+  color:#555;
+  margin:0px;
+  padding:0px;
+  font-size:13px;
+}
+.products-list{
+  margin:20px auto 120px;
+}
+.post-data-each{
+  display:block;
+  margin:0px 0px 10px;
+  padding:5px;
+  border:1px solid #ccc;
+  background-color:#fff;
+  transition:all 0.3s ease 0s;
+  overflow:hidden;
+}
+.post-data-each:hover{
+  background-color:#f9f9f9;
+}
+.post-data-head{
+  font-weight:bold;
+  font-size:20px;
+  color:#555;
+  padding:0px 5px;
+  margin:0px 0px 5px;
+}
+.post-data-detail{
+  margin:5px;
+  padding:0px;
+  color:#777;
+  white-space:pre;
+  overflow:hidden;
+}
+.post-data-body{
+  margin:10px 5px 5px;
+  padding:0px;
+  white-space:pre;
+  overflow:hidden;
+}
+.post-data-body button{
+  margin-right:10px;
+}
+.products-option button span{color:#fff;}
+
+
+@media screen and (max-width:620px){
+  .post-data-head{font-size:16px;}
+}
+</style>
+
+

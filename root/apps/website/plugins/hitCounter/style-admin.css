@@ -1,0 +1,54 @@
+body{margin:0px;padding:0px;}
+/* visitors */
+.visitors{
+  background-color:#fff;
+  padding:10px;
+  margin:10px 0px;
+  font-size:13px;
+  font-family:'Segoe UI Light',Segoe UI,sans-serif,Tahoma,Verdana,Arial,Consola,consolas,monospace;
+  color:#333;
+  display:block;
+}
+
+
+
+/* statistic */
+.statistic{
+  display:block;
+  position:relative;
+  margin:10px 10px;
+  padding:10px 10px 20px;
+  border:1px solid #ccc;
+  font-size:13px;
+  font-family:'Segoe UI Light',Segoe UI,sans-serif,Tahoma,Verdana,Arial,Consola,consolas,monospace;
+}
+.statistic ul{
+  margin:0px;
+  padding:0px 0px 0px 20px;
+}
+.statistic ul li{
+  list-style:circle;
+  position:relative;
+  padding:5px 0px 0px;
+  margin:0px;
+}
+.statistic ul li a{
+  cursor:pointer;
+  color:#333;
+  position:relative;
+}
+.statistic ul li a:hover{
+  color:#37b;
+}
+.statistic ul li div.statistic-percent{
+  position:absolute;
+  background-color:#7b3;
+  width:0%;
+  height:5px;
+  top:24px;
+  border-radius:2px;
+}
+.statistic-reload{
+  margin:0px 0px 5px;
+  padding:5px 0px;
+}

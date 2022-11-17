@@ -1,0 +1,138 @@
+<div class="edit-post-grid">
+<div class="title">Edit Product #{{aid}}</div>
+<table class="edit-post-table"><tbody>
+<tr><td colspan="2"><input type="text" name="title" value="{{title}}" placeholder="Title" /></td></tr>
+<tr><td colspan="2"><textarea name="content" placeholder="Content">{{content}}</textarea></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+
+<div class="edit-post-grid">
+<table class="edit-post-table"><tbody>
+<tr><td colspan="2">
+  <input class="button button-soft-green" type="submit" name="submit" value="Save" />
+  <input class="button button-orange" type="submit" name="switch" value="Plain Text" data-type="rich" />
+  <input class="button button-red" type="submit" name="delete" value="Delete" />
+  </td></tr>
+
+<tr><td>URL Slug</td><td><input type="text" name="url" value="{{url}}" /></td></tr>
+<tr><td colspan="2" class="edit-post-sel">
+<select name="status" data-value="{{status}}">
+  <option value="publish">Publish</option>
+  <option value="draft">Draft</option>
+  <option value="trash">Trash</option>
+</select>
+<select name="access" data-value="{{access}}">
+  <option value="public">Public</option>
+  <option value="private">Private</option>
+</select>
+<select name="type" data-value="{{type}}">
+  <option value="page">Page</option>
+  <option value="post">Post</option>
+  <option value="training">Training</option>
+  <option value="article">Article</option>
+  <option value="product">Product</option>
+  <option value="event">Event</option>
+</select>
+<select name="template" data-value="{{template}}">
+  <option value="standard">Standard</option>
+</select>
+</td></tr>
+
+<tr data-post="false" data-article="false">
+  <td>Description</td><td><input type="text" name="description" value="{{description}}" /></td>
+  </tr>
+<tr data-post="false" data-article="false">
+  <td>Keywords</td><td><input type="text" name="keywords" value="{{keywords}}" /></td>
+  </tr>
+
+<tr data-training="false">
+  <td>Trainer</td><td><input type="text" name="trainer" value="{{trainer}}" /></td>
+  </tr>
+<tr data-training="false" data-event="false" data-product="false">
+  <td>Price</td><td><input type="text" name="price" value="{{price}}" /></td>
+  </tr>
+<tr data-training="false" data-event="false">
+  <td>Place</td><td><input type="text" name="place" value="{{place}}" /></td>
+  </tr>
+<tr data-product="false">
+  <td>Stock</td><td><input type="number" name="stock" value="{{stock}}" /></td>
+  </tr>
+
+<tr data-event="false">
+  <td>Host</td><td><input type="text" name="host" value="{{host}}" /></td>
+  </tr>
+<tr data-event="false" data-training="false">
+  <td>Start</td><td><input type="text" name="start" value="{{start}}" /></td>
+  </tr>
+<tr data-event="false" data-training="false">
+  <td>End</td><td><input type="text" name="end" value="{{end}}" /></td>
+  </tr>
+
+<tr><td>Picture</td><td><input type="file" name="picture" data-value="{{picture}}" accept="image/*" /></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+<style type="text/css" media="print,screen">
+.edit-post-grid{
+  display:inline-block;
+  vertical-align:top;
+  width:calc(50% - 3px);
+}
+.edit-post-table{
+  display:block;
+  width:100%;
+}
+.edit-post-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.edit-post-table td:nth-child(1){
+  width:80px;
+  min-width:80px;
+  max-width:80px;
+}
+.edit-post-table tr[data-post="false"],
+.edit-post-table tr[data-article="false"],
+.edit-post-table tr[data-training="false"],
+.edit-post-table tr[data-product="false"],
+.edit-post-table tr[data-event="false"],
+.edit-post-table tr[data-other="false"]{
+  display:none;
+}
+.edit-post-table tr[data-post="true"],
+.edit-post-table tr[data-article="true"],
+.edit-post-table tr[data-training="true"],
+.edit-post-table tr[data-product="true"],
+.edit-post-table tr[data-event="true"],
+.edit-post-table tr[data-other="true"]{
+  display:block;
+}
+.edit-post-table td input[type="submit"]{
+  margin-right:3px;
+  font-weight:bold;
+}
+.edit-post-table td.edit-post-sel select{
+  margin:0px 1px 5px 0px;
+}
+textarea[name="content"]{
+  height:150px;
+}
+.mce-menubar{
+  display:none;
+}
+
+@media screen and (max-width:1050px){
+  .edit-post-grid{
+    display:block;
+    width:100%;
+  }
+}
+@media screen and (max-width:620px){
+  textarea[name="content"]{
+    height:300px;
+  }
+}
+</style>
+
+

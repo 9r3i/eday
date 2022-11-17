@@ -1,0 +1,104 @@
+
+
+
+
+
+
+
+
+
+*PRODUCT_DATA*
+product_id (int)
+name (string)
+
+price (int)
+before_discount (int)
+currency (string)
+
+seller (array) --> seller_id
+stock (int)
+pictures (array)
+rating (?)
+reviews (array) --> review_id
+sold (int)
+badge (string)
+voucher (array) --> voucher_id
+description (string)
+category (string) --> category_id
+size (int)
+color (string)
+specification (array)
+
+*SELLER_DATA*
+seller_id (int)
+name (string)
+picture (string)
+about (string)
+reviews (array) --> review_id
+location (string)
+username (string)
+password (string)
+
+*REVIEW_DATA*
+review_id (int)
+user (int) --> user_id
+comment (string)
+pictures (array)
+product_id (int)
+product_rating (int)
+seller_id (int)
+seller_rating (int)
+
+*VOUCHER_DATA*
+voucher_id (int)
+name (string)
+value (int)
+currency (string)
+seller_id (int)
+expire (int)
+
+*CATEGORY_DATA*
+category_id (int)
+name (string)
+parent (int)
+
+*USER_DATA*
+user_id (int)
+name (string)
+address (string)
+picture (string)
+phone (int)
+password (string)
+gender (int)
+email (string)
+vouchers (array) --> voucher_id
+
+*CART_DATA*
+cart_id (int)
+
+*ORDER_DATA*
+order_id (int)
+products (array) --> product_id
+vouchers (array) --> voucher_id
+seller_id (int)
+user_id (int)
+is_paid (bool)
+total (int)
+
+*INVOICE_DATA*
+invoice_id (int)
+seller_id (int)
+user_id (int)
+is_paid (bool)
+content (string)
+total (int)
+
+*PAYMENT_DATA*
+payment_id (int)
+invoice_id (int)
+order_id (int)
+total (int)
+
+
+
+

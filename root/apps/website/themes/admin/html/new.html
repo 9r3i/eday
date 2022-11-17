@@ -1,0 +1,136 @@
+<div class="new-post-grid">
+<div class="title">New Post</div>
+<table class="new-post-table"><tbody>
+<tr><td colspan="2"><input type="text" name="title" placeholder="Title" /></td></tr>
+<tr><td colspan="2"><textarea name="content" placeholder="Content"></textarea></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+
+<div class="new-post-grid">
+<table class="new-post-table"><tbody>
+<tr><td colspan="2">
+  <input class="button-soft-green" type="submit" name="submit" value="Save" />
+  <input class="button-orange" type="submit" name="switch" value="Plain Text" data-type="rich" />
+  </td></tr>
+
+<tr><td colspan="2" class="new-post-sel">
+<select name="status">
+  <option value="publish">Publish</option>
+  <option value="draft">Draft</option>
+  <option value="trash">Trash</option>
+</select>
+<select name="access">
+  <option value="public">Public</option>
+  <option value="private">Private</option>
+</select>
+<select name="type">
+  <option value="page">Page</option>
+  <option value="post">Post</option>
+  <option value="training">Training</option>
+  <option value="article">Article</option>
+  <option value="product">Product</option>
+  <option value="event">Event</option>
+</select>
+<select name="template">
+  <option value="standard">Standard</option>
+</select>
+</td></tr>
+
+<tr data-post="false" data-article="false">
+  <td>Description</td><td><input type="text" name="description" /></td>
+  </tr>
+<tr data-post="false" data-article="false">
+  <td>Keywords</td><td><input type="text" name="keywords" /></td>
+  </tr>
+
+<tr data-training="false">
+  <td>Trainer</td><td><input type="text" name="trainer" /></td>
+  </tr>
+<tr data-training="false" data-event="false" data-product="false">
+  <td>Price</td><td><input type="text" name="price" /></td>
+  </tr>
+<tr data-training="false" data-event="false">
+  <td>Place</td><td><input type="text" name="place" /></td>
+  </tr>
+<tr data-product="false">
+  <td>Stock</td><td><input type="number" name="stock" /></td>
+  </tr>
+
+<tr data-event="false">
+  <td>Host</td><td><input type="text" name="host" /></td>
+  </tr>
+<tr data-event="false" data-training="false">
+  <td>Start</td><td><input type="text" name="start" /></td>
+  </tr>
+<tr data-event="false" data-training="false">
+  <td>End</td><td><input type="text" name="end" /></td>
+  </tr>
+
+<tr><td>Picture</td><td><input type="file" name="picture" data-value="" accept="image/*" /></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+<script type="text/javascript" src="{{ADMIN_PATH}}tinymce/tinymce.min.js"></script>
+<style type="text/css" media="print,screen">
+.new-post-grid{
+  display:inline-block;
+  vertical-align:top;
+  width:calc(50% - 3px);
+}
+.new-post-table{
+  display:block;
+  width:100%;
+}
+.new-post-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.new-post-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.new-post-table tr[data-post="false"],
+.new-post-table tr[data-article="false"],
+.new-post-table tr[data-training="false"],
+.new-post-table tr[data-product="false"],
+.new-post-table tr[data-event="false"],
+.new-post-table tr[data-other="false"]{
+  display:none;
+}
+.new-post-table tr[data-post="true"],
+.new-post-table tr[data-article="true"],
+.new-post-table tr[data-training="true"],
+.new-post-table tr[data-product="true"],
+.new-post-table tr[data-event="true"],
+.new-post-table tr[data-other="true"]{
+  display:block;
+}
+.new-post-table td input[type="submit"]{
+  margin-right:5px;
+}
+.new-post-table td.new-post-sel select{
+  margin:0px 1px 5px 0px;
+}
+textarea[name="content"]{
+  height:350px;
+}
+.mce-menubar{
+  display:none;
+}
+
+@media screen and (max-width:1050px){
+  .new-post-grid{
+    display:block;
+    width:100%;
+  }
+}
+@media screen and (max-width:620px){
+  textarea[name="content"]{
+    height:300px;
+  }
+}
+</style>
+
+

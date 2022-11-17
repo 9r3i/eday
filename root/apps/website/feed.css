@@ -1,0 +1,22 @@
+/* feed.css */
+*{display:block;font-family:'Segoe UI Light',Tahoma,Consola,consolas,monospace;}
+:root{margin:50px;}
+channel>title{font-size:x-large;text-align:center;}
+channel>title:after{
+  display:block;
+  padding:10px;
+  margin:10px 0px;
+  content:"This RSS feed style is designed by e-Day webFeed.";
+  background-color:#333;
+  color:#ddd;
+  font-size:13px;
+}
+item{margin:15px 0px;background-color:#eed;padding:10px;}
+item>title{font-size:medium;margin-bottom:10px 0px;}
+item>link{font-size:small;margin:6px 0px;}
+item>description{font-size:small;margin:6px 0px;}
+item>pubDate{font-size:small;margin:6px 0px;}
+channel>link,channel>copyright,
+channel>lastBuildDate,channel>generator, 
+channel>docs,language,lastBuildDate,
+ttl,guid,category{display:none;}

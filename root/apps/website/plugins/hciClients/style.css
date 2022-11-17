@@ -1,0 +1,29 @@
+.hci-clients{
+  display:block;
+  width:auto;
+  height:auto;
+  margin:5px;
+  padding:5px;
+  overflow:hidden;
+  posistion:relative;
+  text-align:center;
+}
+.hci-clients-each{
+  display:inline-block;
+  overflow:hidden;
+  padding:0px;
+  margin:9px;
+}
+.hci-clients-each img{
+  max-height:50px;
+  max-width:150px;
+  border:none;
+  transition:all 0.7s ease 0s;
+}
+.hci-clients-each img:hover{
+  border-radius:50px;
+  -moz-transform:rotate(360deg);
+  -webkit-transform:rotate(360deg);
+  -khtml-transform:rotate(360deg);
+  box-transform:rotate(360deg);
+}

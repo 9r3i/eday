@@ -1,0 +1,33 @@
+<div class="title">Edit Plugin</div>
+<table class="plugin-edit-table"><tbody>
+<tr><td>Namespace</td><td id="plugin-namespace" colspan="2">{{_admin.path}}</td></tr>
+<tr><td>Files</td><td>
+  <select name="plugin-files" class="select">
+    <option value="">-- No file --</option>
+  </select>
+  </td><td id="save-button"></td></tr>
+<tr><td id="plugin-file-content" colspan="3"></td></tr>
+</tbody></table>
+<style type="text/css">
+.plugin-edit-table{width:100%;}
+.plugin-edit-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.plugin-edit-table td:nth-child(1){
+  width:90px;
+  min-width:90px;
+  max-width:90px;
+}
+.plugin-edit-table td textarea{
+  font-family:'Consola','Consolas',consola,consolas,monospace;
+  font-size:13px;
+  background-color:#ddc;
+  color:#555;
+  min-height:400px;
+}
+</style>
+
+

@@ -1,0 +1,41 @@
+<div class="title">Dashboard</div>
+<div class="dashboard-line" data-level="2">
+<fieldset class="field"><legend>Welcome</legend>
+Hello, <strong>{{USER.name}}</strong>. Welcome to <span id="dashboard-type"></span>'s dashboard.
+<br />You may <a href="{{WEBSITE_ADDRESS}}" target="_blank" title="View Website">View Website</a> to see what's changed.
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="4">
+<fieldset class="field"><legend>Posts</legend>
+<div id="dashboard-posts"></div>
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="2">
+<fieldset class="field"><legend>My Account</legend>
+You also can update your name, email and password in <a href="?{{ADMIN_KEY}}=account" title="Edit my account">My Account</a> page.
+</fieldset>
+</div>
+
+<div class="dashboard-line" data-level="16">
+<fieldset class="field"><legend>Access</legend>
+As an admin, you have authorized access to all features in this webAdmin.<br />
+Including <a href="?{{ADMIN_KEY}}=settings" title="Settings">Settings</a> and <a href="?{{ADMIN_KEY}}=users/users" title="All Users">Users</a> channels.
+</fieldset>
+</div>
+
+<style type="text/css" media="print,screen">
+.dashboard-line{
+  padding:0px;
+  margin:0px 0px 20px;
+}
+.dashboard-line fieldset{border:1px solid #ccc;}
+.dashboard-line fieldset legend{font-weight:bold;}
+.dashboard-line fieldset a{font-weight:bold;}
+#dashboard-posts button{
+  margin:10px;
+}
+</style>
+
+

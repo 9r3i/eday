@@ -1,0 +1,41 @@
+/**
+ * Name     : Hit Counter
+ * Author   : Luthfie
+ * Email    : Luthfie@y7mail.com
+ * Filename : style.css
+ */
+
+#hit_counter_sidebar{
+  margin:0px;
+  padding:10px;
+}
+.hit-counter-content{
+  margin:10px;
+  padding:10px;
+  border-radius:50px;
+  border:1px solid #ccc;
+  font-size:medium;
+  text-align:center;
+  color:#555;
+  background-color:#fff;
+  box-shadow:inset 0px 0px 10px 0px #777;
+  /* text-shadow:1px 1px 0px #7bf, -1px -1px 0px #7bf; */
+  cursor:default;
+  transition:all 0.3s ease 0s;
+}
+.hit-counter-content:hover{
+  background-color:#444;
+  box-shadow:inset 0px 0px 10px 0px #111;
+}
+.hit-counter-content:hover > .hit-counter-digit,
+.hit-counter-content:hover > .hit-counter-label{
+  color:#fff;
+}
+.hit-counter-label{
+  display:inline-block;
+}
+.hit-counter-digit{
+  display:inline-block;
+  margin-left:5px;
+}
+

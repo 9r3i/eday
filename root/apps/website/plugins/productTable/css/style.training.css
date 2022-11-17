@@ -1,0 +1,265 @@
+/* Plugin for Dixie CMS
+ * Name     : Training Table
+ * Creator  : Luthfie
+ * Email    : Luthfie@y7mail.com
+ * Filename : style.css
+ */
+
+.training-table-parent-element{
+  overflow:auto;
+  width:100%;
+  
+}
+.training-table{
+  font-size:small;
+  background-color:#fff;
+  border:0px none;
+  width:100%;
+}
+.training-table-head{
+  font-weight:bold;
+  background-color:#776;
+  color:#fff;
+}
+.training-table-head th{
+  text-align:center;
+  width:14%;
+  margin:0px;
+  padding:13px 5px;
+  border:0px none;
+  font-size:13px;
+  background-color:#555;
+  color:#ddd;
+}
+.training-table-head-title{}
+.training-table-head-date{}
+.training-table-head-price{}
+.training-table-head-trainer{}
+.training-table-head-place{}
+.training-table-head-reg{}
+
+.training-table-genap{background-color:#ccb;}
+.training-table-ganjil{background-color:#eed;}
+.training-table-choosen{background-color:#7bf;}
+
+
+.training-table tr{
+  background-color:#f9f9f9;
+}
+.training-table tr:nth-child(2n){
+  background-color:#f1f1f1;
+}
+.training-table td{
+  margin:0px;
+  padding:5px;
+  border:0px none;
+  font-size:13px;
+}
+.training-table td a{
+  color:#37b;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.training-table-price{
+  text-align:center;
+  white-space:pre-wrap;
+  overflow:auto;
+}
+.training-table-date{text-align:center;}
+.training-table-title{max-width:150px;}
+.training-table-trainer{text-align:center;}
+.training-table-place{text-align:center;}
+.training-table-reg{text-align:center;}
+
+.training-table-input{
+  width:calc(100% - 16px);
+  border:1px solid #ccc;
+  padding:2px;
+  margin:5px;
+}
+
+.training-table-reg-button:hover{background-color:#ddc;}
+.training-table-reg-button{
+  background-color:#eed;
+  border:1px solid #ccc;
+  padding:5px 9px;
+  margin:0px;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:13px;
+  color:#555;
+}
+.training-table-dialog-background{
+  position:fixed;
+  width:100%;height:100%;
+  top:0px;left:0px;right:0px;bottom:0px;
+  background-color:#555;
+  z-index:991;
+  opacity:0.9;
+}
+.training-table-dialog-closer:after{
+  content:" ";
+  border-top:3px solid #fff;
+  transform:rotate(-45deg);
+  margin-top:-3px;
+  margin-left:3px;
+  width:28px;
+  height:1px;
+  display:block;
+}
+.training-table-dialog-closer:before{
+  content:" ";
+  border-top:3px solid #fff;
+  transform:rotate(45deg);
+  margin-top:14px;
+  margin-left:2px;
+  width:28px;
+  height:1px;
+  display:block;
+}
+.training-table-dialog-closer:hover{background-color:#d77;}
+.training-table-dialog-closer{
+  z-index:992;
+  position:fixed;
+  top:10px;
+  right:10px;
+  border-radius:67px;
+  padding:0px;
+  margin:0px;
+  background-color:#d55;
+  cursor:default;
+  box-shadow:0px 0px 10px #ddd;
+  width:32px;
+  height:32px;
+  line-height:32px;
+  text-align:center;
+  font-size:32px;
+  display:block;
+}
+.training-table-dialog-center{
+  z-index:992;
+  position:fixed;
+  top:200%;left:50%;
+  right:50%;bottom:50%;
+  width:1px;height:1px;
+  margin:0px;
+  padding:0px;
+  transition:all 0.3s ease 0s;
+}
+.training-table-dialog-center-show{
+  top:50%;
+}
+.training-table-dialog-content{
+  z-index:993;
+  position:relative;
+  margin:-220px 0px 0px -170px;
+  padding:10px;
+  width:320px;
+  height:420px;
+  background-color:#fff;
+  opacity:1;
+  border-radius:7px;
+  box-shadow:0 0 10px #ddd;
+  font-size:small;
+  color:#555;
+  overflow:hidden;
+}
+.training-table-dialog-content h2{font-size:small;}
+.tt-dialog-line strong{
+  font-weight:normal;
+  font-size:inherit;
+}
+.tt-dialog-line{
+  margin:0px;
+  padding:3px 5px;
+  border:1px dotted #ccc;
+  font-size:13px;
+}
+.tt-dialog-text{
+  font-size:small;
+  margin:5px 0px;
+  padding:5px;
+  width:295px;
+  max-width:295px;
+  min-width:295px;
+  height:120px;
+  max-height:90px;
+  min-height:90px;
+  border:1px dotted #ccc;
+}
+
+.training-table-submit-button:hover{background-color:#ac9;}
+.training-table-submit-button{
+  background-color:#bda;
+  border:1px solid #bbb;
+  padding:5px 9px;
+  margin:0px 10px 0px 0px;
+  border-radius:5px;
+  cursor:default;
+  font-size:small;
+}
+.training-table-close-button:hover{background-color:#d77;}
+.training-table-close-button{
+  background-color:#f99;
+  border:1px solid #bbb;
+  padding:5px 9px;
+  margin:0px;
+  border-radius:5px;
+  cursor:default;
+  font-size:small;
+}
+.tt-dialog-input:focus{border:1px solid #f99;}
+.tt-dialog-input{
+  border:1px dotted #bbb;
+  padding:2px;
+  margin:-3px 0px 0px 0px;
+  float:right;
+  width:170px;
+  font-size:small;
+}
+.tt-dialog-copyright:before{content:"Powered by 9r3i"}
+.tt-dialog-copyright{
+  color:#777;
+  font-size:13px;
+  text-align:center;
+  cursor:default;
+  margin:0px;
+  padding:10px;
+}
+.training-register-each{
+  font-size:13px;
+  font-family:'Segoe UI Light',Segoe UI,sans-serif,Tahoma,Verdana,Arial,Consola,consolas,monospace;
+  background-color:#fff;
+  border:1px solid #ccc;
+  padding:10px;
+  margin:0px 3px 3px 0px;
+  color:#333;
+  vertical-align:top;
+  display:inline-block;
+  width:calc(33% - 27px);
+}
+.training-register-each hr{
+  border:0.1px solid #ccc;
+  display:block;
+  height:0px;
+}
+@media screen and (max-width:620px){
+  .training-register-each{
+    width:calc(50% - 27px);
+  }
+}
+@media screen and (max-width:420px){
+  .training-register-each{
+    display:block;
+    margin:0px 0px 3px 0px;
+    width:calc(100% - 22px);
+  }
+}
+
+
+
+
+
+
+

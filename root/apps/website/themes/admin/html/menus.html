@@ -1,0 +1,84 @@
+<div class="title">Menus ({{length}})</div>
+<div class="menus-options">
+<button class="button button-soft-green" onclick="_admin.go('menuNew');"><i class="fa fa-plus"></i>Add Menu</button>
+</div>
+
+<ol class="menus-list" id="menus-list">
+</ol>
+<style type="text/css">
+ol.menus-list{
+  padding-left:0px;
+}
+ol.menus-list li{
+  list-style:none;
+  margin-bottom:10px;
+  border:1px dotted #ccc;
+  padding:10px 10px 10px 15px;
+  font-weight:bold;
+}
+ol.menus-list li div.menu-list-data{
+  transition:all 0.2s ease 0s;
+  padding:0px;
+  margin:0px;
+  overflow:hidden;
+}
+ol.menus-list li span{
+  color:#7b3;
+  cursor:pointer;
+}
+ol.menus-list li div.menu-list-data button{
+  margin:10px 5px 0px 0px;
+}
+ol.menus-list li ul{
+  border:1px dotted #ccc;
+  padding:1px 0px 0px 25px;
+  margin:10px 0px 0px;
+  display:block;
+}
+ol.menus-list li ul li{
+  list-style:circle;
+  margin-bottom:0px;
+  border:0px none;
+  border-top:1px dotted #ccc;
+  padding:3px 3px 6px;
+  font-weight:normal;
+}
+ol.menus-list li ul li:nth-child(1){
+  border:0px none;
+}
+ol.menus-list li ul li div{
+  display:inline-block;
+  vertical-align:top;
+}
+ol.menus-list li ul li div:nth-child(1){
+  width:90px;
+}
+ol.menus-list li ul li div:nth-child(2){
+  width:calc(100% - 90px);
+  word-wrap:break-word;
+}
+.menus-options{
+  
+}
+.menus-options button{
+  vertical-align:top;
+}
+ol li div.menu-head-type{
+  font-weight:bold;
+  margin-bottom:15px;
+  text-align:center;
+  font-size:24px;
+}
+ol li.menu-head-type-list{
+  list-style:none;
+}
+
+
+@media screen and (max-width:620px){
+  ol li div.menu-head-type{
+    font-size:20px;
+  }
+}
+</style>
+
+

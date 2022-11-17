@@ -1,0 +1,109 @@
+.web-contact-logo{float:right;}
+.formulir{margin:0px;padding:0px;min-height:200px;}
+.jorok{padding:0px;margin:0px;width:100%;}
+.buruk{width:70px;padding:2px;}
+.berak{
+  width:calc(100% - 10px);
+  max-width:320px;
+  padding:2px;
+  border:1px solid #ccc;
+}
+.borok{height:150px;
+  width:calc(100% - 10px);
+  max-width:320px;
+  padding:2px;
+  border:1px solid #ccc;
+  resize:vertical;
+}
+.tombol{height:30px;width:100px;padding: 2px;vertical-align:middle;font-weight:bold;cursor:pointer;background-color: #ffffff; border-radius: 7px 0px;box-shadow: 0px 0px 9px #ccc;border:1px solid #ccc;}
+.tom {text-align:left;}
+.sapaan{
+  width:100px;
+  padding:2px;
+  border:1px solid #ccc;
+  background-color:#fff;
+}
+.web-contact-logo{
+  filter:saturate(39%);
+}
+.web-contact-logo-loading{
+  animation:logoRotate 2000ms infinite;
+  filter:saturate(100%);
+}
+/* rotate animation */
+@keyframes logoRotate{
+  from{transform:rotate(0deg);padding:0px;width:150px;height:150px;}
+  50%{transform:rotate(360deg);padding:50px;width:50px;height:50px;}
+  to{transform:rotate(720deg);padding:0px;width:150px;height:150px;}
+}
+@-webkit-keyframes logoRotate{
+  from{transform:rotate(0deg);padding:0px;width:150px;}
+  50%{transform:rotate(360deg);padding:50px;width:50px;}
+  to{transform:rotate(0deg);padding:0px;width:150px;}
+}
+
+body{
+  background-color:#eed;
+}
+.web-contact-review{
+  margin:0px;
+  padding:0px;
+  background-color:#eed;
+  font-size:13px;
+  color:#333;
+  font-family:'Segoe UI Light',Segoe UI,sans-serif,Tahoma,Verdana,Arial,Consola,consolas,monospace;
+  border-bottom:1px solid #ccc;
+}
+.web-contact-review-each{
+  background-color:#fff;
+  border:1px solid #ccc;
+  padding:10px;
+  margin:0px 3px 3px 0px;
+  color:#333;
+  vertical-align:top;
+  display:inline-block;
+  width:calc(33% - 27px);
+}
+.web-contact-review-time{
+  border-top:1px solid #ccc;
+  color:#777;
+  font-size:11px;
+  font-style:italic;
+  margin-top:5px;
+  padding-top:5px;
+}
+.web-contact-review-next{
+  border-top:1px solid #ccc;
+  padding:10px;
+  margin:0px;
+  text-align:center;
+  color:#333;
+}
+.web-contact-review-next:hover{
+  background-color:#eed;
+}
+.web-contact-review-each hr{
+  border:0.1px solid #ccc;
+  display:block;
+  height:0px;
+}
+.web-contact-review-each p{
+  margin:0px;
+  padding:0px;
+}
+.web-contact-review-content{
+  font-size:11px;
+  color:#333;
+}
+@media screen and (max-width:620px){
+  .web-contact-review-each{
+    width:calc(50% - 27px);
+  }
+}
+@media screen and (max-width:420px){
+  .web-contact-review-each{
+    display:block;
+    margin:0px 0px 3px 0px;
+    width:calc(100% - 22px);
+  }
+}

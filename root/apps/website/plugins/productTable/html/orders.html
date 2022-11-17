@@ -1,0 +1,51 @@
+<div class="title">My Orders ({{length}})</div>
+<div class="orders-list" id="orders-list">
+</div>
+<style type="text/css">
+.orders-list{
+  margin:20px auto 120px;
+}
+.post-data-each{
+  display:block;
+  margin:0px 0px 10px;
+  padding:5px;
+  border:1px solid #ccc;
+  background-color:#fff;
+  transition:all 0.3s ease 0s;
+  overflow:hidden;
+}
+.post-data-each:hover{
+  background-color:#f9f9f9;
+}
+.post-data-head{
+  font-weight:bold;
+  font-size:20px;
+  color:#555;
+  padding:0px 5px;
+  margin:0px 0px 5px;
+}
+.post-data-detail{
+  margin:5px;
+  padding:0px;
+  color:#777;
+  white-space:pre;
+  overflow:hidden;
+}
+.post-data-body{
+  margin:10px 5px 5px;
+  padding:0px;
+  white-space:pre;
+  overflow:hidden;
+}
+.post-data-body button{
+  margin-right:10px;
+}
+.products-option button span{color:#fff;}
+
+
+@media screen and (max-width:620px){
+  .post-data-head{font-size:16px;}
+}
+</style>
+
+

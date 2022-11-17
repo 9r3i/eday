@@ -1,0 +1,6 @@
+<FilesMatch ^.*\.kdb$>
+deny from all
+</FilesMatch>
+<FilesMatch ^kdb.php$>
+deny from all
+</FilesMatch>

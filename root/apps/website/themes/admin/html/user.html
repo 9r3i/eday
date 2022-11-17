@@ -1,0 +1,33 @@
+<div class="title">Edit User</div>
+<table class="user-table"><tbody>
+<tr><td>UserID</td><td data-userid="{{aid}}">{{aid}}</td></tr>
+<tr><td>Username</td><td><input type="text" name="username" value="{{username}}" /></td></tr>
+<tr><td>Privilege</td><td>
+  <select name="privilege" data-value="{{privilege}}">
+    <option value="member">Member</option>
+    <option value="author">Author</option>
+    <option value="editor">Editor</option>
+    <option value="admin">Admin</option>
+  </select>
+  </td></tr>
+<tr><td>Password</td><td><input type="password" name="password" placeholder="Blank means no change" /></td></tr>
+<tr><td>Name</td><td><input type="text" name="name" value="{{name}}" /></td></tr>
+<tr><td>Email</td><td><input type="text" name="email" value="{{email}}" /></td></tr>
+<tr><td></td><td><input class="button button-blue" type="submit" name="submit" value="Save" /></td></tr>
+</tbody></table>
+<style type="text/css">
+.user-table{width:100%;}
+.user-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.user-table td:nth-child(1){
+  width:90px;
+  min-width:90px;
+  max-width:90px;
+}
+</style>
+
+

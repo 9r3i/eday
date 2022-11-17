@@ -1,0 +1,68 @@
+<div class="title">All Users ({{length}})</div>
+<div class="users-options">
+<button class="button button-soft-green" onclick="_admin.go('userNew');"><i class="fa fa-user-plus"></i>Add User</button>
+</div>
+
+<ol class="users-list" id="users-list">
+</ol>
+<style type="text/css">
+ol.users-list{
+  padding-left:0px;
+}
+ol.users-list li{
+  list-style:decimal inside;
+  margin-bottom:10px;
+  border:1px dotted #ccc;
+  padding:10px 10px 10px 15px;
+  font-weight:bold;
+}
+ol.users-list li div.user-list-data{
+  transition:all 0.2s ease 0s;
+  padding:0px;
+  margin:0px;
+  overflow:hidden;
+}
+ol.users-list li span{
+  color:#7b3;
+  cursor:pointer;
+}
+ol.users-list li div.user-list-data button{
+  margin:10px 5px 0px 0px;
+}
+ol.users-list li ul{
+  border:1px dotted #ccc;
+  padding:1px 0px 0px 25px;
+  margin:10px 0px 0px;
+  display:block;
+}
+ol.users-list li ul li{
+  list-style:circle;
+  margin-bottom:0px;
+  border:0px none;
+  border-top:1px dotted #ccc;
+  padding:3px 3px 6px;
+  font-weight:normal;
+}
+ol.users-list li ul li:nth-child(1){
+  border:0px none;
+}
+ol.users-list li ul li div{
+  display:inline-block;
+  vertical-align:top;
+}
+ol.users-list li ul li div:nth-child(1){
+  width:90px;
+}
+ol.users-list li ul li div:nth-child(2){
+  width:calc(100% - 90px);
+  word-wrap:break-word;
+}
+.users-options{
+  
+}
+.users-options button{
+  vertical-align:top;
+}
+</style>
+
+

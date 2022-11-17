@@ -1,0 +1,54 @@
+<div class="title">Settings</div>
+<table class="setting-table"><tbody>
+
+
+<tr><td colspan="2"><strong>Core</strong></td></tr>
+<tr><td>Allow DB API</td><td><input type="text" value="{{core.allowDatabaseAPI}}" name="allowDatabaseAPI" /></td></tr>
+<tr><td>Main Page</td><td><input type="text" value="{{core.mainPage}}" name="mainPage" /></td></tr>
+<tr><td>Main Page ID</td><td><input type="number" value="{{core.mainPageID}}" name="mainPageID" /></td></tr>
+<tr><td>Admin Key</td><td><input type="text" value="{{core.admin}}" name="admin" /></td></tr>
+<tr><td>Theme Key</td><td><input type="text" value="{{core.theme}}" name="theme" /></td></tr>
+<tr><td>Feed Limit</td><td><input type="number" value="{{core.feedLimit}}" name="feedLimit" /></td></tr>
+
+<tr><td colspan="2"><strong>Database</strong></td></tr>
+<tr><td>DB Driver</td><td><input type="text" value="{{database.driver}}" name="driver" /></td></tr>
+<tr><td>DB Host</td><td><input type="text" value="{{database.dbhost}}" name="dbhost" /></td></tr>
+<tr><td>DB Name</td><td><input type="text" value="{{database.dbname}}" name="dbname" /></td></tr>
+<tr><td>DB User</td><td><input type="text" value="{{database.dbuser}}" name="dbuser" /></td></tr>
+<tr><td>DB Password</td><td><input type="text" value="{{database.dbpass}}" name="dbpass" /></td></tr>
+
+<tr><td colspan="2"><strong>Website</strong></td></tr>
+<tr><td>Name</td><td><input type="text" value="{{website.name}}" name="name" /></td></tr>
+<tr><td>Title</td><td><input type="text" value="{{website.title}}" name="title" /></td></tr>
+<tr><td>Description</td><td><input type="text" value="{{website.description}}" name="description" /></td></tr>
+<tr><td>Keywords</td><td><input type="text" value="{{website.keywords}}" name="keywords" /></td></tr>
+<tr><td>Robots</td><td><input type="text" value="{{website.robots}}" name="robots" /></td></tr>
+
+<tr><td colspan="2"><strong>Load Pages</strong></td></tr>
+<tr><td>Page #1</td><td><input type="text" value="{{load.page01}}" name="page01" /></td></tr>
+<tr><td>Page #2</td><td><input type="text" value="{{load.page02}}" name="page02" /></td></tr>
+<tr><td>Page #3</td><td><input type="text" value="{{load.page03}}" name="page03" /></td></tr>
+
+<tr><td></td><td><input class="button-blue" type="submit" value="Save" name="submit" onclick="settings.save()" /></td></tr>
+
+</tbody></table>
+<style type="text/css" media="print,screen">
+.setting-table{width:100%;}
+.setting-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.setting-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.setting-table td strong{
+  display:block;
+  text-align:center;
+}
+</style>
+
+
