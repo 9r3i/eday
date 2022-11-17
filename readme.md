@@ -9,6 +9,12 @@
 # eday
 e-day stands for e-commerse day, build for e-commerse web
 
+eday is my 5th generation or project E (echo)
+since dixie is 4th generation or project D (delta)
+
+see dixie
+[https://github.com/9r3i/dixie](https://github.com/9r3i/dixie)
+
 # version
 this is version 2.0.0
 
