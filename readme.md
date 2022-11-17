@@ -20,4 +20,4 @@ this version has been using namespace \eday, so it's very different from the old
 
 this version also requires another library, but fortunately, I put everything on it.
 
-still, i suggest use the old one because that version is stable.
+still, i suggest to use the old one because that version is stable.
