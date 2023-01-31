@@ -7,7 +7,7 @@
 [![Release](https://img.shields.io/github/release/9r3i/eday.svg)](https://github.com/9r3i/eday/releases)
 
 # eday
-e-day stands for e-commerse day, build for e-commerse web
+e-day stands for e-commerce dynamic app ui, build for e-commerce website.
 
 eday is my 5th generation or project E (echo)
 since dixie is 4th generation or project D (delta)
