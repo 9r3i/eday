@@ -7,6 +7,7 @@
  * @require:
  *   - dataObject
  */
+#[AllowDynamicProperties]
 class webAdmin{
   const version='1.0.0';
   protected $path;
@@ -554,7 +555,11 @@ class webAdmin{
       return $this->error('File is error ('.$file['error'].').');
     }
     /* move uploaded file */
-    $dest='files/upload/'.$file['name'];
+    $dir='files/upload/';
+    $dest=$dir.$file['name'];
+    if(!is_dir($dir)){
+      @mkdir($dir,0755,true);
+    }
     if(!@move_uploaded_file($file['tmp_name'],$dest)){
       return $this->error('Failed to move uploaded file.');
     }

@@ -5,6 +5,7 @@
  * https://github.com/9r3i
  * started at november 6th 2019
  */
+#[AllowDynamicProperties]
 class webPlugins{
   const version='1.0.0';
   private $dir=null;

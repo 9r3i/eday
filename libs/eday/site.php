@@ -4,6 +4,7 @@
  * continue at november 28th 2019 -- version 1.1.0 -- being library namespace eday
  */
 namespace eday;
+#[AllowDynamicProperties]
 class site{
   const version='1.1.0';
   const host=EDAY_HOST;            // luthfie.com
@@ -100,20 +101,19 @@ class site{
   }
   /* public static - [once called] */
   public static function engine(){
-    $e=new engine((object)[
+    return new engine((object)[
       'engine_name'=>'e-Day',
       'engine_version'=>eday::version,
       'engine_description'=>'e-Commerce CMS',
       'author_name'=>'9r3i',
       'author_email'=>'luthfie@y7mail.com',
       'author_uri'=>'https://github.com/9r3i',
-    ]);
-    $e->start=function(){
+    ],function(){
       if(!defined('EDAY_ENGINE_STARTED')){
         define('EDAY_ENGINE_STARTED',true);
         return self::ignite();
       }return false;
-    };return $e;
+    });
   }
   /* private static ignition */
   private static function ignite(){

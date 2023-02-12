@@ -6,12 +6,14 @@
  * started at november 6th 2019
  * @requires:
  *   - dataObject
- *   - site
+ *   - eday\eday
+ *   - eday\site
  */
 use eday\eday;
 use eday\site;
+#[AllowDynamicProperties]
 class webHelper{
-  const version='1.0.1';
+  const version='1.0.2';
   /* parse site menu */
   public static function parseSiteMenu(array $menus){
     $data=[];
@@ -64,11 +66,12 @@ class webHelper{
       'title'=>'Untitled Website',
       'description'=>'Website description',
       'keywords'=>'Website keywords',
-      'robots'=>'indexes, followes',
+      'robots'=>'index, follow',
       'author'=>'9r3i',
       'authorURI'=>'https://github.com/9r3i',
       'generator'=>'e-Day',
       'version'=>eday::version,
+      'generatorURI'=>'https://github.com/9r3i/eday',
       'canonical'=>site::url,
       'pingback'=>site::url,
       'alternate'=>site::url.'feed.xml',

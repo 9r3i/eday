@@ -1,7 +1,7 @@
 <?php
 use \eday\site;
 class productTable extends webPlugin{
-  const version='2.0.1';
+  const version='2.1.0';
   protected $db;
   protected $table;
   protected $ajaxError=false;
@@ -65,6 +65,18 @@ class productTable extends webPlugin{
         'shopping-cart', // icon
         2, // level 2 = member
       ],
+      [
+        'plugin/productTable/editHeader', // admin path
+        'Edit Header', // name and title
+        'shopping-cart', // icon
+        4, // level 4 = author
+      ],
+      [
+        'plugin/productTable/editFooter', // admin path
+        'Edit Footer', // name and title
+        'shopping-cart', // icon
+        4, // level 4 = author
+      ],
     ],$menu);
   }
   /* product register in admin page */
@@ -92,6 +104,10 @@ class productTable extends webPlugin{
       'editProduct'=>$this->loadFile('html/editProduct.html'),
       'orders'=>$this->loadFile('html/orders.html'),
       'store'=>$this->loadFile('html/store.html'),
+      'editHeader'=>$this->loadFile('html/editHeader.html'),
+      'editFooter'=>$this->loadFile('html/editFooter.html'),
+      'header'=>$this->loadFile('html/home.header.html'),
+      'footer'=>$this->loadFile('html/home.footer.html'),
     ];
     $temp='';
     foreach($this->faList() as $fa){
@@ -109,6 +125,7 @@ class productTable extends webPlugin{
       .$this->loadPathCSS('css/tiny-slider.min.css')
       .$this->loadPathCSS('css/admin.css')
       .$this->loadPathCSS('css/product.table.css')
+      .$this->loadPathJS('ckeditor/ckeditor.js')
       .$this->loadPathJS('js/sweetalert.min.js')
       .$this->loadPathJS('js/tiny-slider.min.js')
       .$this->loadPathJS('js/events-1.1.0.min.js')
@@ -120,6 +137,8 @@ class productTable extends webPlugin{
       .$this->loadPathJS('html/js/products.js')
       .$this->loadPathJS('html/js/newProduct.js')
       .$this->loadPathJS('html/js/editProduct.js')
+      .$this->loadPathJS('html/js/editHeader.js')
+      .$this->loadPathJS('html/js/editFooter.js')
       .'<script type="text/javascript">'
         .'const WEBSITE_ADDRESS="'.EDAY_ADDR.'";'
         .'const ADMIN_KEY="'.$this->website()->site()->adminKey.'";'
@@ -191,9 +210,10 @@ class productTable extends webPlugin{
       'product_url'=>$this->option('product_url'),
       'EDAY_PATH'=>EDAY_PATH,
       'post_url'=>$this->post->url,
+      'post'=>$this->post,
       //$this->post(),
       //@json_encode($this->post->toArray()),
-      //$this->db->update('posts','aid=14',['author'=>'admin']),
+      //'update'=>$this->db->update('posts','aid=1',['author'=>'admin']),
       'db_error'=>$this->db->error,
       //$this->db->select('review_table',$where),
       //'posts'=>$this->db->select('posts',$where),
@@ -221,14 +241,20 @@ class productTable extends webPlugin{
   public function header($header){
     global $isProductTable;
     if($isProductTable){
+      $tag='data:image/svg+xml;base64,'
+        .base64_encode($this->loadFile('images/store.svg'));
       $html=[
+        'home_header'=>$this->loadFile('html/home.header.html'),
+        'home_footer'=>$this->loadFile('html/home.footer.html'),
         'single'=>$this->loadFile('html/public.product.html'),
         'bulk'=>$this->loadFile('html/public.products.html'),
         'preload'=>'<div class="preload-outer">'
                   .'<div class="preload-inner"></div></div>',
         'white'=>$this->loadFile('images/white.1.txt'),
+        'tag'=>$tag,
       ];
       $header.=''
+      .$this->opengraph($this->post)
       .$this->loadPathCSS('css/font-awesome.min.css')
       .$this->loadPathCSS('css/sweetalert.min.css')
       .$this->loadPathCSS('css/tiny-slider.min.css')
@@ -242,6 +268,7 @@ class productTable extends webPlugin{
         .'const HTML_DATA='.@json_encode($html).';'
         .'const AJAX_QUERY='.@json_encode($this->ajaxQuery).';'
         .'</script>'
+      .$this->jsonLD($this->post)
       .'';
     }
     return $header;
@@ -260,6 +287,120 @@ class productTable extends webPlugin{
       .'';
     }
     return $footer;
+  }
+  /* open graph */
+  public function opengraph($post){
+    if($post->picture==''){
+      return '';
+    }
+    $image=$post->picture;
+    $width=1;
+    $height=1;
+    if(preg_match('/^\[\"/',$post->picture)){
+      $jpic=json_decode($post->picture);
+      if(isset($jpic[0])){
+        $image=site::url.$jpic[0];
+        $info=@getimagesize($jpic[0]);
+        if($info){
+          list($width,$height)=$info;
+        }
+      }else{
+        $image=$this->loadFile('images/white.1.txt');
+      }
+    }else{
+      $info=@getimagesize($image);
+      if($info){
+        list($width,$height)=$info;
+      }
+      $image=site::url.$image;
+    }
+    $desc=$post->description;
+    if(preg_match('/^\{\"/',$post->description)){
+      $desc=str_replace("\n",' ',$post->content);
+    }
+    $purl=$this->option('product_url');
+    $purl.=!preg_match('/\.html$/',$purl)?'.html':'';
+    $url=site::url.$purl;
+    if($post->url!=$this->option('product_url')){
+      $url.='?id='.$post->url;
+    }
+    global $website;
+    $name=$website->site()->name;
+    $res='<meta property="og:image" content="'.$image.'" />'
+      .'<meta property="og:image:alt" content="'.$desc.'" />'
+      .'<meta property="og:image:width" content="'.$width.'" />'
+      .'<meta property="og:image:height" content="'.$height.'" />'
+      .'<meta property="og:site_name" content="'.$name.'" />'
+      .'<meta property="og:type" content="object" />'
+      .'<meta property="og:title" content="'.$post->title.'" />'
+      .'<meta property="og:url" content="'.$url.'" />'
+      .'<meta property="og:description" content="'.$desc.'" />';
+    return $res;
+  }
+  /* seo ld+json */
+  public function jsonLD($post){
+    $image=$post->picture;
+    if(preg_match('/^\[\"/',$post->picture)){
+      $jpic=json_decode($post->picture);
+      if(isset($jpic[0])){
+        $image=site::url.$jpic[0];
+      }else{
+        $image=$this->loadFile('images/white.1.txt');
+      }
+    }else{
+      $image=site::url.$image;
+    }
+    $desc=$post->description;
+    if(preg_match('/^\{\"/',$post->description)){
+      $desc=$post->content;
+    }
+    $rate=$this->publicRate(['pid'=>$post->aid]);
+    $data=[
+      '@context'=>'https://schema.org/',
+      '@type'=>'Product',
+      'name'=>$post->title,
+      'image'=>$image,
+      'description'=>$desc,
+      'aggregateRating'=>[
+        '@type'=>'AggregateRating',
+        'ratingValue'=>(string)$rate['rate'],
+        'reviewCount'=>(string)$rate['reviews'],
+        'bestRating'=>'5',
+        'worstRating'=>'1',
+      ]
+    ];
+    return "\r\n\r\n<script type=\"application/ld+json\">\r\n"
+      .@json_encode($data,JSON_PRETTY_PRINT)
+      ."\r\n</script>\r\n\r\n";
+  }
+  /* public rate */
+  protected function publicRate($post){
+    $def=[
+      'product_id'=>0,
+      'rate'=>'0.0',
+      'reviews'=>0,
+    ];
+    if(!isset($post['pid'])){
+      return $def;
+    }
+    $def['product_id']=$post['pid'];
+    $sel=$this->db->select('rating_table','product_id='
+      .$post['pid']);
+    if(!is_array($sel)||count($sel)<1){
+      return $def;
+    }
+    $length=count($sel);
+    $point=0;
+    foreach($sel as $rate){
+      $point+=intval($rate['value']);
+    }
+    $max=5;
+    $total=$length*$max;
+    $value=floor(($point/$total)*($max*10));
+    $rate=$value/10;
+    $def['rate']=number_format($rate,1);
+    $def['reviews']=$length;
+    return $def;
   }
   /* exec page */
   protected function executePage(string $path){

@@ -26,6 +26,8 @@ class EdayProductTable{
     'updateProduct',
     'editProduct',
     'deleteOrders',
+    'saveHeader',
+    'saveFooter',
   ];
   private $publicMethods=[
     'publicRate',
@@ -155,6 +157,7 @@ class EdayProductTable{
     ];
     $seldata=isset($seller[0])?$seller[0]:$def;
     return [
+      'type'=>'stores',
       'length'=>count($sel),
       'data'=>$sel,
       'seller'=>$seldata,
@@ -163,7 +166,10 @@ class EdayProductTable{
   private function publicCategories($post){
     $where='keywords='.$post['tag'];
     $sel=$this->db->search('posts',$where);
+    $csel=$this->db->select('category_table','aid='.$post['tag']);
     return [
+      'type'=>'categories',
+      'category'=>count($csel)>0?$csel[0]:[],
       'length'=>count($sel),
       'data'=>$sel,
     ];
@@ -202,6 +208,7 @@ class EdayProductTable{
       .'&template=standard';
     $sel=$this->db->select('posts',$where);
     return [
+      'type'=>'products',
       'length'=>count($sel),
       'data'=>$sel,
     ];
@@ -608,6 +615,22 @@ class EdayProductTable{
     ];
   }
   /* admin/member */
+  private function saveFooter($post){
+    if(!isset($post['data'])){
+      return 'Error: Require data content.';
+    }
+    $file=__DIR__.'/html/home.footer.html';
+    $put=@file_put_contents($file,$post['data']);
+    return $put?'OK':'Error: Failed to save data.';
+  }
+  private function saveHeader($post){
+    if(!isset($post['data'])){
+      return 'Error: Require data content.';
+    }
+    $file=__DIR__.'/html/home.header.html';
+    $put=@file_put_contents($file,$post['data']);
+    return $put?'OK':'Error: Failed to save data.';
+  }
   private function deleteOrders($post){
     if(!isset($post['ids'])){
       return 'Error: Require IDS.';

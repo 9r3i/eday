@@ -15,8 +15,9 @@
  *   - webHelper
  */
 use eday\site;
+#[AllowDynamicProperties]
 class website{
-  const version='1.0.0';
+  const version='1.0.1';
   protected $app=null;
   protected $dir=null;
   protected $path=null;
@@ -29,6 +30,8 @@ class website{
   protected $theme=null;
   /* constructor */
   public function __construct(){
+    /* change directory */
+    @chdir(EDAY_INDEX_DIR);
     /* set application name */
     $this->app=site::config('app');
     /* set directory path */
@@ -232,12 +235,12 @@ class website{
       $counter++;
       if($counter>$limit){break;}
       $content.='<item>'
-        .'<title><![CDATA['.utf8_decode($post->title).']]></title>'
+        .'<title><![CDATA['.mb_convert_encoding($post->title,'ASCII','auto').']]></title>'
         .'<link>'.EDAY_ADDR.$post->url.'.html</link>';
       $tcontent=strip_tags($post->content);
       $pcontent=substr($tcontent,0,300);
       $pcontent.=strlen($tcontent)>300?'...':'';
-      $content.='<description><![CDATA['.utf8_decode($pcontent).']]></description>'
+      $content.='<description><![CDATA['.mb_convert_encoding($pcontent,'ASCII','auto').']]></description>'
         .'<pubDate>'.date('r',$post->time).'</pubDate>'
         .'<guid>'.EDAY_ADDR.$post->url.'.html</guid>'
         .'</item>';

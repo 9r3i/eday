@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 960 960" style="enable-background:new 0 0 960 960;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFE6CF;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#C5ECED;}
+	.st3{fill:#B3E2E5;}
+	.st4{fill:#CC333F;}
+	.st5{fill:#AA1F36;}
+	.st6{fill:#F2F2F2;}
+	.st7{fill:#F2C5A0;}
+	.st8{fill:#DDA77F;}
+</style>
+<g>
+	<rect x="189.4" y="363.7" class="st0" width="581.3" height="413.4"/>
+	<rect x="260.4" y="477.6" class="st1" width="261.9" height="228.5"/>
+	<rect x="278.4" y="494.4" class="st2" width="224.5" height="192.3"/>
+	<g>
+		<polygon class="st3" points="503,686.7 503,615.1 282.2,686.7 		"/>
+		<polygon class="st3" points="279.8,660.7 503,589.3 503,552.6 279.8,624 		"/>
+		<polygon class="st3" points="279.8,560.6 486.9,494.4 279.8,494.4 		"/>
+	</g>
+	<g>
+		<path class="st4" d="M215.3,443.9h0.6c-36.4,0-65.3-29.5-65.3-65.8v-59.6h129.2v59.6C279.8,414.5,251.6,443.9,215.3,443.9z"/>
+		<polygon class="st5" points="282.5,318.5 150.8,318.5 267.9,150.6 360.6,150.6 		"/>
+		<path class="st1" d="M348.9,443.9h-1.7c-36.4,0-67.5-29.5-67.5-65.8v-59.6h135.6v59.6C415.4,414.5,385.3,443.9,348.9,443.9z"/>
+		<polygon class="st6" points="415.4,318.5 279.8,318.5 360.6,150.6 443.4,150.6 		"/>
+		<polygon class="st5" points="680.2,318.5 809.2,318.5 692.1,150.6 599.4,150.6 		"/>
+		<polygon class="st6" points="544.6,318.5 680.2,318.5 599.4,150.6 516.6,150.6 		"/>
+		<path class="st4" d="M479.4,443.9h0.9c-36.4,0-64.9-29.5-64.9-65.8v-59.6h129.2v59.6C544.6,414.5,515.7,443.9,479.4,443.9z"/>
+		<path class="st1" d="M613,443.9h-1.3c-36.4,0-67.1-29.5-67.1-65.8v-59.6h135.6v59.6C680.2,414.5,649.4,443.9,613,443.9z"/>
+		<path class="st4" d="M743.5,443.9h1.3c-36.4,0-64.5-29.5-64.5-65.8v-59.6h129.2v59.6C809.4,414.5,779.8,443.9,743.5,443.9z"/>
+		<polygon class="st5" points="443.3,150.6 522.3,150.6 544.6,318.5 415.4,318.5 		"/>
+	</g>
+	<rect x="176.4" y="777.1" class="st7" width="607.1" height="32.3"/>
+	<rect x="176.4" y="764.2" class="st8" width="607.1" height="12.9"/>
+	<rect x="564.6" y="477.6" class="st1" width="169.6" height="286.6"/>
+	<rect x="583" y="494.4" class="st3" width="132.8" height="269.8"/>
+	<rect x="564.6" y="620.9" class="st1" width="169.6" height="16.8"/>
+</g>
+</svg>

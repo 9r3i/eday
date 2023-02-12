@@ -1,0 +1,90 @@
+<div class="new-post-grid">
+<div class="title">Edit Header</div>
+
+<table class="new-post-table"><tbody>
+
+<tr><td colspan="2"><textarea name="content" placeholder="Header Content" id="content-editor"></textarea></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+
+<div class="new-post-grid">
+<table class="new-post-table"><tbody>
+<tr><td colspan="2">
+  <button class="button button-blue" name="submit" id="content-save"><i class="fa fa-save"></i> Save</button>
+  </td></tr>
+  
+<tr><td></td><td></td></tr>
+</tbody></table></div>
+
+<div class="padding-down"></div>
+
+<style type="text/css" media="print,screen">
+.new-post-grid{
+  display:inline-block;
+  vertical-align:top;
+  width:calc(50% - 3px);
+}
+.new-post-table{
+  display:block;
+  width:100%;
+}
+.new-post-table td{
+  border:1px dotted #eee;
+  padding:5px;
+  margin:0px;
+  width:100%;
+}
+.new-post-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.new-post-table td:nth-child(1){
+  width:100px;
+  min-width:100px;
+  max-width:100px;
+}
+.new-post-table tr[data-post="false"],
+.new-post-table tr[data-article="false"],
+.new-post-table tr[data-training="false"],
+.new-post-table tr[data-product="false"],
+.new-post-table tr[data-event="false"],
+.new-post-table tr[data-other="false"]{
+  display:none;
+}
+.new-post-table tr[data-post="true"],
+.new-post-table tr[data-article="true"],
+.new-post-table tr[data-training="true"],
+.new-post-table tr[data-product="true"],
+.new-post-table tr[data-event="true"],
+.new-post-table tr[data-other="true"]{
+  display:table-row;
+}
+.new-post-table td input[type="submit"]{
+  margin-right:3px;
+  font-weight:bold;
+}
+.new-post-table td.new-post-sel select{
+  margin:0px 1px 5px 0px;
+}
+textarea[name="content"]{
+  height:150px;
+}
+.mce-menubar{
+  display:none;
+}
+
+@media screen and (max-width:1050px){
+  .new-post-grid{
+    display:block;
+    width:100%;
+  }
+}
+@media screen and (max-width:620px){
+  textarea[name="content"]{
+    height:300px;
+  }
+}
+</style>
+
+

@@ -1,0 +1,1 @@
+/* noscript */#noscript:before{content:"Please activate your browser javascript";}#noscript{position:fixed;top:0px;left:0px;bottom:0px;right:0px;z-index:999;background-color:#fff;font-size:large;color:#777;text-align:center;padding:20px 10px;margin:0px;cursor:default;font-family:consolas,monospace;}

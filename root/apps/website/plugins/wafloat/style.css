@@ -1,0 +1,38 @@
+
+.wafloat{
+  position:fixed;
+  z-index:7;
+  bottom:32px;
+  right:32px;
+  width:48px;
+  height:48px;
+  padding:8px 12px;
+  margin:0px;
+  overflow:hidden;
+  border:0px none;
+  border-radius:24px;
+  box-shadow:2px 2px 5px #bbb;
+  background-color:#fff;
+  background-position:8px 8px;
+  background-size:32px 32px;
+  background-repeat:no-repeat;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  transition:all 0.3s ease 0s;
+}
+.wafloat span{
+  color:#25D366;
+  line-height:32px;
+  font-size:16px;
+  font-weight:bold;
+  margin-left:48px;
+  white-space:pre;
+}
+.wafloat img{
+  max-width:100%;
+}
+.wafloat-wide{
+  width:calc(50vw - 50px);
+  z-index:9;
+}

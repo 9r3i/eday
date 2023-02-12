@@ -16,9 +16,13 @@
  * - add constant LDB2X_CLI_DIR to replace/overwrite database root
  * continued at november 21st 209 - version 2x.4.1
  * - fix error unlink in method update, delete and elses
+ * continued at october 4th 2021 - version 2x.4.2
+ * - remove get_magic_quotes_gpc in strip_magic method
+ * continued at december 25th 2021 - version 2x.4.3
+ * - fix error of flock as php8 termux refuses to do so
  */
 class Ldb2x{
-  const version='2x.4.1';
+  const version='2x.4.3';
   protected $database=null;
   protected $tables=null;
   private $dir=null;
@@ -75,13 +79,13 @@ class Ldb2x{
     $this->cid=dechex(time());
     $column['cid']=$this->cid;
     $o=fopen($filename,'rb+');
-    if(!$o||!flock($o,LOCK_EX)){
-      $this->error='Failed to insert';
+    if(!$o){
+      $this->error='Failed to open the table';
       return false;
-    }
+    }@flock($o,LOCK_EX);
     if(fseek($o,0,SEEK_END)===0){
       $w=fwrite($o,base64_encode(serialize($column))."\n");
-    }flock($o,LOCK_UN);fclose($o);
+    }@flock($o,LOCK_UN);fclose($o);
     return isset($w)&&$w?true:false;
   }
   public function select($table,$where=false){
@@ -149,10 +153,10 @@ class Ldb2x{
     $temp=$this->temp_dir.$table.'-'.$this->cid.'.tmp';
     $o=fopen($filename,'rb');
     $t=fopen($temp,'wb');
-    if(!$o||!flock($o,LOCK_EX)){
-      $this->error='Failed to update';
+    if(!$o){
+      $this->error='Failed to open the table';
       return false;
-    }$res=0;
+    }$res=0;@flock($o,LOCK_EX);
     while(!feof($o)){
       $g=fgets($o);
       $d=unserialize(base64_decode(trim($g)));
@@ -165,7 +169,7 @@ class Ldb2x{
       }
       fwrite($t,$g);
       $res+=1;
-    }flock($o,LOCK_UN);
+    }@flock($o,LOCK_UN);
     fclose($o);
     fclose($t);
     $copy=@copy($temp,$filename);
@@ -197,17 +201,17 @@ class Ldb2x{
     $temp=$this->temp_dir.$table.'-'.$this->cid.'.tmp';
     $o=fopen($filename,'rb');
     $t=fopen($temp,'wb');
-    if(!$o||!flock($o,LOCK_EX)){
+    if(!$o){
       $this->error='Failed to delete';
       return false;
-    }$res=0;
+    }$res=0;@flock($o,LOCK_EX);
     while(!feof($o)){
       $g=fgets($o);
       $d=unserialize(base64_decode(trim($g)));
       if(isset($d[$index[0]])&&$d[$index[0]]==$index[1]){continue;}
       fwrite($t,$g);
       $res+=1;
-    }flock($o,LOCK_UN);
+    }@flock($o,LOCK_UN);
     fclose($o);
     fclose($t);
     $copy=@copy($temp,$filename);
@@ -328,14 +332,7 @@ class Ldb2x{
     return $hash;
   }
   public function strip_magic($str){
-    if(is_array($str)){
-      $hasil=array();
-	  foreach($str as $k=>$v){
-        $hasil[$k]=(get_magic_quotes_gpc())?stripslashes($v):$v;
-      }return $hasil;
-	}else{
-	  return (get_magic_quotes_gpc())?stripslashes($str):$str;
-	}
+    return $str;
   }
   public function spend_time(){
     return @number_format(@microtime(true)-$this->microtime,4,'.','');
@@ -388,9 +385,10 @@ class Ldb2x{
   private function write($filename=null,$content='',$type='wb'){
     $filename=isset($filename)?$filename:'error-'.time().'.txt';
     $fp=fopen($filename,$type);
-    if($fp&&flock($fp,LOCK_EX)){
-      $write=fwrite($fp,(get_magic_quotes_gpc()?stripslashes($content):$content));
-      flock($fp,LOCK_UN);
+    if($fp){
+      @flock($fp,LOCK_EX);
+      $write=fwrite($fp,$content);
+      @flock($fp,LOCK_UN);
       fclose($fp);
       return $write?true:false;
     }fclose($fp);

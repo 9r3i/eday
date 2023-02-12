@@ -7,6 +7,7 @@
  * continue at november 28th 2019 -- version 2.1.0 -- being library namespace eday
  */
 namespace eday;
+#[AllowDynamicProperties]
 class eday{
   const version='2.0.0';
   public static $error=false;

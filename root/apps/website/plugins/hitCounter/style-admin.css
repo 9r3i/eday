@@ -45,8 +45,11 @@ body{margin:0px;padding:0px;}
   background-color:#7b3;
   width:0%;
   height:5px;
-  top:24px;
+  top:18px;
   border-radius:2px;
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  box-sizing:content-box;
 }
 .statistic-reload{
   margin:0px 0px 5px;

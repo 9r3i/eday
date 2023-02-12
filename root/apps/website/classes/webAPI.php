@@ -7,6 +7,7 @@
  * @require:
  *   - apix
  */
+#[AllowDynamicProperties]
 class webAPI extends apix{
   const version='1.0.0';
   public function __construct(){
